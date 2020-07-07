@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Varela Round", sans-serif;
+}
+
+#root {
+  background-color: #50514f;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$davys-grey: #50514fff;
+$fire-opal: #f25f5cff;
+$fire-opal-dark: rgb(179, 69, 67);
+$naples-yellow: #ffe066ff;
+$celadon-blue: #247ba0ff;
+$green-sheen: #70c1b3ff;
+
+#clock {
+  color: $naples-yellow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  #timer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    #labels-timer-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      
+      #break-wrapper {
+        order: -1;
+      }
+      #session-wrapper {
+        order: 1
+      }
+      #time-wrapper {
+        order: 0;
+      }
+      .labels-inner-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin: 0 25px;
+  
+        #break-label,
+        #session-label {
+          text-align: center;
+          font-size: 2rem;
+        }
+        .button-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 10px 0 0 0;
+          cursor: default;
+  
+          .btn {
+            all: unset;
+            min-width: 50px;
+            text-align: center;
+            color: $naples-yellow;
+            font-weight: bold;
+            font-size: 2.5rem;
+            border: 2px solid $fire-opal;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          #break-decrement,
+          #session-decrement {
+            &:hover {
+              color: $fire-opal-dark;
+            }
+          }
+          #break-increment,
+          #session-increment {
+            &:hover {
+              color: $green-sheen;
+            }
+          }
+          #break-length,
+          #session-length {
+            text-align: center;
+            font-size: 2.5rem;
+            min-width: 50px;
+            margin: 0px 7.5px;
+          }
+        }
+      }
+      $timer-width: 250px;
+      #time-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: $timer-width;
+        height: $timer-width;
+        border: 3px solid $fire-opal;
+        border-radius: 50%;
+  
+        #timer-label {
+          text-transform: capitalize;
+          font-size: 2.5rem;
+        }
+        #time-left {
+          color: $green-sheen;
+          font-size: 2.75rem;
+          padding: 5px 0;
+        }
+      }
+    }
+    #timer-button-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 15px 0 0 0;
+
+      .timer-btn {
+        all: unset;
+        cursor: pointer;
+
+        &:hover {
+          color: $fire-opal;
+        }
+        &:active {
+          color: $fire-opal-dark;
+        }
+      }
+      .timer-btn:nth-child(1) {
+        margin: 0 10px 0 0;
+      }
+    }
+  }
+}
